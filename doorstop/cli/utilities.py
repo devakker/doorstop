@@ -85,29 +85,29 @@ def configure_settings(args):
 
     # Parse common settings
     if args.no_reformat is not None:
-        settings.REFORMAT = args.no_reformat is False
+        settings.REFORMAT = not args.no_reformat
     if args.reorder is not None:
-        settings.REORDER = args.reorder is True
+        settings.REORDER = args.reorder
     if args.no_level_check is not None:
-        settings.CHECK_LEVELS = args.no_level_check is False
+        settings.CHECK_LEVELS = not args.no_level_check
     if args.no_ref_check is not None:
-        settings.CHECK_REF = args.no_ref_check is False
+        settings.CHECK_REF = not args.no_ref_check
     if args.no_child_check is not None:
-        settings.CHECK_CHILD_LINKS = args.no_child_check is False
+        settings.CHECK_CHILD_LINKS = not args.no_child_check
     if args.strict_child_check is not None:
-        settings.CHECK_CHILD_LINKS_STRICT = args.strict_child_check is True
+        settings.CHECK_CHILD_LINKS_STRICT = args.strict_child_check
     if args.no_suspect_check is not None:
-        settings.CHECK_SUSPECT_LINKS = args.no_suspect_check is False
+        settings.CHECK_SUSPECT_LINKS = not args.no_suspect_check
     if args.no_review_check is not None:
-        settings.CHECK_REVIEW_STATUS = args.no_review_check is False
+        settings.CHECK_REVIEW_STATUS = not args.no_review_check
     if args.no_cache is not None:
-        settings.CACHE_DOCUMENTS = args.no_cache is False
-        settings.CACHE_ITEMS = args.no_cache is False
-        settings.CACHE_PATHS = args.no_cache is False
+        settings.CACHE_DOCUMENTS = not args.no_cache
+        settings.CACHE_ITEMS = not args.no_cache
+        settings.CACHE_PATHS = not args.no_cache
     if args.warn_all is not None:
-        settings.WARN_ALL = args.warn_all is True
+        settings.WARN_ALL = args.warn_all
     if args.error_all is not None:
-        settings.ERROR_ALL = args.error_all is True
+        settings.ERROR_ALL = args.error_all
 
     # Parse `add` settings
     if hasattr(args, 'server') and args.server is not None:
